@@ -1,0 +1,23 @@
+02-27 12:31:40 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Table TEST not found; SQL statement:
+select * from public.test [42102-73]
+	at org.h2.message.Message.getSQLException(Message.java:103)
+	at org.h2.message.Message.getSQLException(Message.java:114)
+	at org.h2.message.Message.getSQLException(Message.java:77)
+	at org.h2.schema.Schema.getTableOrView(Schema.java:348)
+	at org.h2.command.Parser.readTableOrView(Parser.java:4054)
+	at org.h2.command.Parser.readTableFilter(Parser.java:909)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1404)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:1501)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1398)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1277)
+	at org.h2.command.Parser.parseSelect(Parser.java:1265)
+	at org.h2.command.Parser.parsePrepared(Parser.java:392)
+	at org.h2.command.Parser.parse(Parser.java:288)
+	at org.h2.command.Parser.parse(Parser.java:260)
+	at org.h2.command.Parser.prepareCommand(Parser.java:232)
+	at org.h2.engine.Session.prepareLocal(Session.java:284)
+	at org.h2.engine.Session.prepareCommand(Session.java:245)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1015)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:70)
+	at com.knack.H2JdbcTest.main(H2JdbcTest.java:30)
